@@ -1,0 +1,8 @@
+\documentclass[tikz,border=2pt]{standalone}
+\usepackage{fontspec}
+% Times New Roman when it is installed, otherwise TeX Gyre Termes (a Times clone that ships with TeX Live and MiKTeX)
+\IfFontExistsTF{Times New Roman}{\setmainfont{Times New Roman}}{\setmainfont{TeX Gyre Termes}}
+\usetikzlibrary{arrows.meta,calc}
+\begin{document}
+\input{overview_times_tikz.tex}
+\end{document}

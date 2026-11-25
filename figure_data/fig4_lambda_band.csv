@@ -1,0 +1,63 @@
+panel,series,x,n_seeds,mean,sd,seed_1,seed_2,seed_3,seed_4,seed_5
+HHAR (ambulatory),"post-hoc probe (held-out), activity",0,5,0.988839,0.002483,0.990695,0.988940,0.988133,0.991371,0.985058
+HHAR (ambulatory),"discriminator (final-epoch training accuracy), activity",0,5,0.997676,0.000253,0.997834,0.997965,0.997308,0.997702,0.997571
+HHAR (ambulatory),"post-hoc probe (held-out), activity",0.02,5,0.980451,0.003322,0.976961,0.977578,0.981066,0.985172,0.981475
+HHAR (ambulatory),"discriminator (final-epoch training accuracy), activity",0.02,5,0.826313,0.057503,0.873753,0.758797,0.804425,0.797006,0.897584
+HHAR (ambulatory),"post-hoc probe (held-out), activity",0.05,5,0.986049,0.004644,0.978801,0.990285,0.984494,0.989546,0.987121
+HHAR (ambulatory),"discriminator (final-epoch training accuracy), activity",0.05,5,0.466321,0.052606,0.438813,0.428506,0.556263,0.438353,0.469669
+HHAR (ambulatory),"post-hoc probe (held-out), activity",0.1,5,0.988298,0.002352,0.985488,0.986813,0.988241,0.991605,0.989341
+HHAR (ambulatory),"discriminator (final-epoch training accuracy), activity",0.1,5,0.406250,0.053028,0.465270,0.439666,0.415113,0.382419,0.328782
+HHAR (ambulatory),"post-hoc probe (held-out), activity",0.15,5,0.986636,0.002392,0.983675,0.984619,0.987267,0.989121,0.988499
+HHAR (ambulatory),"discriminator (final-epoch training accuracy), activity",0.15,5,0.378296,0.008590,0.385767,0.386358,0.374147,0.365809,0.379399
+HHAR (ambulatory),"post-hoc probe (held-out), activity",0.25,5,0.988239,0.003112,0.983707,0.990437,0.991596,0.986843,0.988612
+HHAR (ambulatory),"discriminator (final-epoch training accuracy), activity",0.25,5,0.380029,0.008860,0.370733,0.378480,0.373162,0.392135,0.385636
+HHAR (ambulatory),"post-hoc probe (held-out), activity",0.5,5,0.990481,0.002475,0.991371,0.991757,0.988808,0.987138,0.993331
+HHAR (ambulatory),"discriminator (final-epoch training accuracy), activity",0.5,5,0.367096,0.016808,0.381303,0.337907,0.372571,0.372571,0.371127
+HHAR (ambulatory),"post-hoc probe (held-out), activity",1,5,0.991214,0.002839,0.988495,0.991233,0.988975,0.995639,0.991727
+HHAR (ambulatory),"discriminator (final-epoch training accuracy), activity",1,5,0.375210,0.005322,0.372571,0.372243,0.374015,0.372571,0.384651
+RealWorld (full pool),"post-hoc probe (held-out), activity",0,5,0.831997,0.005001,0.828955,0.830544,0.829679,0.840886,0.829922
+RealWorld (full pool),"discriminator (final-epoch training accuracy), activity",0,5,0.954559,0.005329,0.947774,0.949944,0.959488,0.958515,0.957075
+RealWorld (full pool),"post-hoc probe (held-out), activity",0.05,5,0.680620,0.071616,0.602969,0.609413,0.766950,0.709921,0.713848
+RealWorld (full pool),"discriminator (final-epoch training accuracy), activity",0.05,5,0.875082,0.069836,0.772679,0.833408,0.938580,0.917186,0.913557
+RealWorld (full pool),"post-hoc probe (held-out), activity",0.1,5,0.539312,0.010986,0.533853,0.557498,0.541297,0.529717,0.534193
+RealWorld (full pool),"discriminator (final-epoch training accuracy), activity",0.1,5,0.678355,0.024862,0.634145,0.688823,0.693230,0.689923,0.685651
+RealWorld (full pool),"post-hoc probe (held-out), activity",0.15,5,0.530689,0.008080,0.541832,0.530763,0.528974,0.532607,0.519271
+RealWorld (full pool),"discriminator (final-epoch training accuracy), activity",0.15,5,0.610741,0.031082,0.560389,0.605474,0.641715,0.627432,0.618696
+RealWorld (full pool),"post-hoc probe (held-out), activity",0.2,5,0.538369,0.013952,0.519412,0.537914,0.545450,0.532434,0.556635
+RealWorld (full pool),"discriminator (final-epoch training accuracy), activity",0.2,5,0.566180,0.031568,0.525344,0.545338,0.602467,0.589946,0.567802
+RealWorld (full pool),"post-hoc probe (held-out), activity",0.3,5,0.583292,0.007273,0.577935,0.585884,0.594383,0.582170,0.576088
+RealWorld (full pool),"discriminator (final-epoch training accuracy), activity",0.3,5,0.516835,0.021672,0.492489,0.502092,0.542633,0.536027,0.510936
+RealWorld (full pool),"post-hoc probe (held-out), activity",1,5,0.732161,0.018120,0.746580,0.749800,0.721210,0.706581,0.736634
+RealWorld (full pool),"discriminator (final-epoch training accuracy), activity",1,5,0.431439,0.010633,0.421038,0.424317,0.427567,0.447112,0.437159
+RealWorld (full pool),"post-hoc probe (held-out), activity",2,5,0.788175,0.011137,0.795991,0.791680,0.782081,0.771924,0.799198
+RealWorld (full pool),"discriminator (final-epoch training accuracy), activity",2,5,0.396618,0.020971,0.415746,0.392736,0.410200,0.401930,0.362479
+MotionSense (ambulatory),"post-hoc probe (held-out), activity",0,3,0.923275,0.016349,0.941163,0.919557,0.909106,,
+MotionSense (ambulatory),"discriminator (final-epoch training accuracy), activity",0,3,0.985156,0.001188,0.985742,0.983789,0.985938,,
+MotionSense (ambulatory),"post-hoc probe (held-out), activity",0.05,3,0.901218,0.012643,0.913120,0.887946,0.902589,,
+MotionSense (ambulatory),"discriminator (final-epoch training accuracy), activity",0.05,3,0.551563,0.048638,0.552344,0.599805,0.502539,,
+MotionSense (ambulatory),"post-hoc probe (held-out), activity",0.1,3,0.907832,0.031732,0.872300,0.917847,0.933348,,
+MotionSense (ambulatory),"discriminator (final-epoch training accuracy), activity",0.1,3,0.541471,0.106522,0.521289,0.656641,0.446484,,
+MotionSense (ambulatory),"post-hoc probe (held-out), activity",0.15,3,0.918327,0.028690,0.936826,0.932877,0.885276,,
+MotionSense (ambulatory),"discriminator (final-epoch training accuracy), activity",0.15,3,0.442839,0.044126,0.415625,0.419141,0.493750,,
+MotionSense (ambulatory),"post-hoc probe (held-out), activity",0.2,3,0.917510,0.018470,0.912091,0.902355,0.938083,,
+MotionSense (ambulatory),"discriminator (final-epoch training accuracy), activity",0.2,3,0.394857,0.008324,0.403516,0.394141,0.386914,,
+MotionSense (ambulatory),"post-hoc probe (held-out), activity",0.3,3,0.932381,0.008824,0.926788,0.927802,0.942553,,
+MotionSense (ambulatory),"discriminator (final-epoch training accuracy), activity",0.3,3,0.386198,0.033502,0.419336,0.352344,0.386914,,
+MotionSense (ambulatory),"post-hoc probe (held-out), activity",0.5,3,0.937869,0.031865,0.944107,0.966155,0.903346,,
+MotionSense (ambulatory),"discriminator (final-epoch training accuracy), activity",0.5,3,0.480469,0.123343,0.428516,0.621289,0.391602,,
+MotionSense (ambulatory),"post-hoc probe (held-out), activity",1,3,0.933767,0.020432,0.913762,0.954602,0.932937,,
+MotionSense (ambulatory),"discriminator (final-epoch training accuracy), activity",1,3,0.310612,0.124992,0.368359,0.396289,0.167187,,
+MobiAct (stairs up / down),"post-hoc probe (held-out), activity",0,3,0.938700,0.005101,0.943995,0.933817,0.938287,,
+MobiAct (stairs up / down),"discriminator (final-epoch training accuracy), activity",0,3,0.956178,0.012836,0.969558,0.943966,0.955011,,
+MobiAct (stairs up / down),"post-hoc probe (held-out), activity",0.05,3,0.894128,0.021771,0.889395,0.917876,0.875112,,
+MobiAct (stairs up / down),"discriminator (final-epoch training accuracy), activity",0.05,3,0.853269,0.076559,0.941272,0.801994,0.816541,,
+MobiAct (stairs up / down),"post-hoc probe (held-out), activity",0.1,3,0.890201,0.020407,0.873088,0.912787,0.884728,,
+MobiAct (stairs up / down),"discriminator (final-epoch training accuracy), activity",0.1,3,0.692798,0.062061,0.761315,0.640356,0.676724,,
+MobiAct (stairs up / down),"post-hoc probe (held-out), activity",0.25,3,0.894559,0.011534,0.886105,0.907698,0.889873,,
+MobiAct (stairs up / down),"discriminator (final-epoch training accuracy), activity",0.25,3,0.655981,0.067742,0.686153,0.578394,0.703394,,
+MobiAct (stairs up / down),"post-hoc probe (held-out), activity",0.5,3,0.883491,0.006856,0.884587,0.876153,0.889732,,
+MobiAct (stairs up / down),"discriminator (final-epoch training accuracy), activity",0.5,3,0.592493,0.041391,0.639817,0.563039,0.574623,,
+MobiAct (stairs up / down),"post-hoc probe (held-out), activity",1,3,0.927838,0.009721,0.938568,0.919619,0.925326,,
+MobiAct (stairs up / down),"discriminator (final-epoch training accuracy), activity",1,3,0.543283,0.049301,0.493804,0.543642,0.592403,,
+MobiAct (stairs up / down),"post-hoc probe (held-out), activity",2,3,0.930274,0.004216,0.928531,0.935082,0.927210,,
+MobiAct (stairs up / down),"discriminator (final-epoch training accuracy), activity",2,3,0.552532,0.017536,0.566541,0.558190,0.532866,,

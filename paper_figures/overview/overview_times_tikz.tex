@@ -1,0 +1,107 @@
+% Overview figure for the Times New Roman revision: the same diagram as overview_tikz.tex, with the three math items
+% (lambda, k, G) written as italic Unicode letters so that every glyph comes from Times New Roman.
+% Compile with XeLaTeX (overview_times_standalone.tex).
+% Overview figure: probe-based analysis of adversarial feature removal.
+% Preamble requirements:
+%   \usepackage{tikz}
+%   \usetikzlibrary{arrows.meta,calc}
+\begin{tikzpicture}[
+  font=\footnotesize,
+  >={Stealth[length=2.2mm]},
+  box/.style={draw=black!80, line width=0.5pt, rounded corners=2pt,
+              align=center, inner sep=4pt, minimum height=12mm,
+              text width=#1-8pt, minimum width=#1,
+              execute at begin node={\hyphenpenalty=10000\relax}},
+  box/.default=4cm,
+  std/.style={dashed, fill=white},
+  ours/.style={fill=black!8},
+  fail/.style={fill=black!22, line width=0.9pt},
+  arr/.style={->, line width=0.6pt, draw=black!85},
+]
+% Column grid: total width 15 cm
+\def\W{15}
+\def\half{7.25}   % half-width boxes (0.5 cm gap)
+\def\third{4.6667} % third-width boxes (0.5 cm gaps)
+
+% Row 1: data and preprocessing
+\node[box=\half cm, anchor=north west] (data) at (0,0)
+  {\textbf{Four public smartphone IMU datasets}\\
+   HHAR, RealWorld, MotionSense, MobiAct};
+\node[box=\half cm, anchor=north east] (prep) at (\W,0)
+  {\textbf{Leak-free preprocessing}\\
+   50\,Hz resampling, 2.56\,s windows,\\segment-level splits};
+\draw[arr] (data) -- (prep);
+
+% Row 2: adversarial training (container drawn explicitly)
+\def\ya{-2.2}  \def\yb{-5.15}
+\draw[black!60, dashed, rounded corners=4pt, line width=0.5pt]
+  (0,\ya) rectangle (\W,\yb);
+\node[anchor=north west, font=\footnotesize\bfseries, inner sep=0pt]
+  at (0.3,\ya-0.25)
+  {Adversarial training over a \textit{λ} grid, all seeds and conditions};
+\draw[arr] (prep.south) -- (prep.south |- 0,\ya);
+
+\node[box=3.6cm, anchor=north west] (enc) at (0.4,\ya-0.8)
+  {\textbf{1D CNN encoder}\\TCN, Transformer and BiLSTM as replications};
+\node[box=4.4cm, anchor=north] (tgt) at (7.5,\ya-0.8)
+  {\textbf{Target head}\\identity\\(activity in the swap experiment)};
+\node[box=4.4cm, anchor=north east] (disc) at (\W-0.4,\ya-0.8)
+  {\textbf{Discriminator}\\behind gradient reversal\\activity, device, position\\(subject in the swap experiment)};
+\draw[arr] (enc.east |- 0,-3.4) -- (tgt.west |- 0,-3.4);
+\coordinate (clearrow) at ($(tgt.south)+(0,-0.15)$);
+\draw[arr] (enc.south) -- (enc.south |- clearrow) -- (disc.west |- clearrow);
+
+% Row 3: two ways to judge invariance
+\def\yc{-6.0}
+\node[box=6.9cm, std, anchor=north west] (stdchk) at (0,\yc)
+  {\textbf{Training-time check}\\discriminator accuracy falls to chance};
+\node[box=6.9cm, ours, anchor=north east] (probe) at (\W,\yc)
+  {\textbf{Post-hoc probe check}\\
+   linear, MLP, \textit{k}-NN fitted to the frozen encoder,\\
+   scored on held-out segments, devices and subjects};
+\draw[<->, line width=0.6pt, draw=black!85] (6.9,\yc-0.6) -- node[above, font=\scriptsize, inner sep=1pt] {\textit{G}} (\W-6.9,\yc-0.6);
+\draw[arr] (stdchk.north |- 0,\yb) -- (stdchk.north);
+\draw[arr] (probe.north |- 0,\yb) -- (probe.north);
+
+% Row 4: findings
+\def\yd{-8.4}
+\node[box=\third cm, fail, anchor=north west] (f1) at (0,\yd)
+  {\textbf{Failure 1: discriminator reads low}\\
+   fails to keep up with the encoder; collapse is the extreme case, reading chance while the factor stays decodable};
+\node[box=\third cm, fail, anchor=north] (f2) at (\W/2,\yd)
+  {\textbf{Failure 2: linear gap}\\
+   linear probes report far more removal than nonlinear probes};
+\node[box=\third cm, ours, anchor=north east] (f3) at (\W,\yd)
+  {\textbf{Secondary findings}\\
+   training-set size, narrow band of \textit{λ}, weak link to decodability};
+
+\coordinate (bus) at (0,-7.8);
+\coordinate (fa) at ($(f1.north)+(-0.7,0)$);
+\coordinate (fb) at ($(f1.north)+(0.7,0)$);
+\draw[arr] (fa |- stdchk.south) -- (fa);
+\draw[line width=0.6pt, black!85] (probe.south) -- (probe.south |- bus);
+\draw[line width=0.6pt, black!85] (fb |- bus) -- (f3.north |- bus);
+\draw[arr] (fb |- bus) -- (fb);
+\draw[arr] (f2.north |- bus) -- (f2.north);
+\draw[arr] (f3.north |- bus) -- (f3.north);
+
+% Row 5: protocol
+\def\ye{-11.6}
+\node[box=\W cm, line width=0.9pt, anchor=north west] (proto) at (0,\ye)
+  {\textbf{Reporting checklist}\\
+   probe the frozen encoder with linear, MLP and \textit{k}-NN probes on held-out data;\\
+   score the discriminator on held-out data (balanced accuracy); report headroom and the gap \textit{G};\\
+   check for collapse (balanced accuracy, entropy, macro-F1); choose \textit{λ} on separate data;\\
+   report the controls, the \textit{λ} sweep, the training-set size and the task cost};
+\foreach \f in {f1,f2,f3} \draw[arr] (\f.south) -- (\f.south |- proto.north);
+
+% Legend
+\def\yl{-14.2}
+\node[box=7mm, std, minimum height=4mm, inner sep=0pt, anchor=west] (l1) at (0,\yl) {};
+\node[anchor=west, font=\scriptsize] (t1) at (l1.east) {Check available during training};
+\node[box=7mm, ours, minimum height=4mm, inner sep=0pt, anchor=west] (l2) at ($(t1.east)+(0.5,0)$) {};
+\node[anchor=west, font=\scriptsize] (t2) at (l2.east) {Probe-based measurement and findings};
+\node[box=7mm, fail, minimum height=4mm, inner sep=0pt, anchor=west] (l3) at ($(t2.east)+(0.5,0)$) {};
+\node[anchor=west, font=\scriptsize] at (l3.east) {Failures of the training-time check};
+\end{tikzpicture}
+

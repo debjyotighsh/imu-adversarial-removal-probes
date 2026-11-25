@@ -1,0 +1,24 @@
+cff-version: 1.2.0
+message: "If you use this code or the stored results, please cite the paper below."
+title: "Code and stored results for: A Probe-Based Analysis of Adversarial Feature Removal in Inertial Sensing for Subject Identification and Activity Recognition"
+type: software
+version: "1.0"
+license: MIT
+authors:
+  - family-names: Ghosh
+    given-names: Debjyoti
+    affiliation: "Computer & System Sciences, Institute of Science, Visva-Bharati, India"
+  - family-names: Biswas
+    given-names: Tarun
+    affiliation: "Computer & System Sciences, Institute of Science, Visva-Bharati, India"
+preferred-citation:
+  type: article
+  title: "A Probe-Based Analysis of Adversarial Feature Removal in Inertial Sensing for Subject Identification and Activity Recognition"
+  authors:
+    - family-names: Ghosh
+      given-names: Debjyoti
+    - family-names: Biswas
+      given-names: Tarun
+  journal: "Journal of Ambient Intelligence and Smart Environments"
+  year: 2026
+  status: submitted

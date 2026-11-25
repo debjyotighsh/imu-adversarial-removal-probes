@@ -1,0 +1,12 @@
+﻿Frozen 2026-10-18 16:26 before any validation run was started.
+protocol_rule.py SHA256 E7C456F7F3AF320516B445D29F442B0967F6163778EBFA773A98C787A575B2AD
+run_protocol_validation.ps1 SHA256 666D7B96388271A138582FC419C7583DD8F58AC9D7225605D9B4136B3C8B9AF2
+Rule: no headroom if p0 - c < 0.05; recoverable if selected rho < 10%; partly reduced if 10% <= rho < 90%; not decoded by the tested probes if rho >= 90%.
+Selected rho: lambda chosen per seed on half A of the seen/seen cell (minimum of the strongest-of-three curve), read on half B. c = 1/(number of training classes).
+Discriminator 'reads chance' = raw training accuracy within 0.05 of the majority-class rate.
+
+Predictions written down before running (new seeds 10-12; conditions N1 HHAR all activities, N2 HHAR bike held out, N3 HHAR RMSprop constant lr):
+ P1 In every condition the activity factor has headroom (p0 - c >= 0.05) and its protocol verdict is 'recoverable'.
+ P2 In every condition the discriminator reads chance at some lambda >= 0.25 while the strongest probe on the same encoder stays within 10% of p0.
+ P3 The linear-only verdict is at least as optimistic as the protocol verdict (linear selected rho >= strongest selected rho) in every condition.
+ P4 The device factor: either no headroom or recoverable (not 'not decoded').

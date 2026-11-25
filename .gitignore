@@ -1,0 +1,15 @@
+__pycache__/
+*.pyc
+*.log
+*_progress.txt
+
+# unzipped results (see results.zip and the README) and caches
+gait_experiment_output_*/
+har_cache/
+*.pkl
+*.npz
+
+# regenerated outputs
+figures/
+paper_figures_regenerated/
+figure_data_regenerated/

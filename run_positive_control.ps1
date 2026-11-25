@@ -1,0 +1,1 @@
+"[{0:HH:mm:ss}] start positive_control" -f (Get-Date) | Out-File positive_control_progress.txt -Append -Encoding utf8; python positive_control_experiment.py --seeds 0 1 2 *> positive_control.log; "[{0:HH:mm:ss}] POSITIVE CONTROL DONE" -f (Get-Date) | Out-File positive_control_progress.txt -Append -Encoding utf8
